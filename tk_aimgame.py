@@ -23,10 +23,16 @@ count = 1
 
 def other_btn():
     global count
-    count += 1
-    btn.destroy()
-    ran_btn()
-
+    # 카운트된 버튼의 숫자가 입력창에 입력한 숫자보다 작을 때
+    if count < num_t:
+        count += 1
+        btn.destroy()
+        ran_btn()
+    else:  # 새로 버튼을 실행하지 않도록 설정
+        btn.destroy()
+        lab = Label(win)
+        lab.config(text="clear")
+        lab.pack(pady=230)
 # 랜덤한 위치에 버튼을 생성하는 함수
 
 
