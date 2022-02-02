@@ -1,5 +1,6 @@
 from tkinter import *
 import random
+from datetime import datetime
 win = Tk()
 win.title("AIM_GAME")
 win.geometry("550x150")
@@ -29,9 +30,11 @@ def other_btn():
         btn.destroy()
         ran_btn()
     else:  # 새로 버튼을 실행하지 않도록 설정
+        final = datetime.now()  # 종료 시간
+        dif_sec = (final-start).total_seconds()
         btn.destroy()
         lab = Label(win)
-        lab.config(text="clear")
+        lab.config(text="Clear " + str(dif_sec)+"초")
         lab.pack(pady=230)
 # 랜덤한 위치에 버튼을 생성하는 함수
 
@@ -48,6 +51,7 @@ def ran_btn():
 
 
 def btn_f():
+    global start
     global num_t  # num_t 변수를 전역변수로 지정
     num_t = int(ent.get())  # 입력창에 입력된 문자열을 숫자로 바꿔서 저장
     # 3개의 위젯이 요소로 있는 리스트 [label, entry, button]
@@ -55,6 +59,7 @@ def btn_f():
         widget.destroy()  # 위젯 요소를 차례로 파괴합니다.
     win.geometry("500x500")  # 창의 크기를 500x500로 설정합니다.
     ran_btn()
+    start = datetime.now()  # 스타트 시간
 
 
 btn = Button(win)
