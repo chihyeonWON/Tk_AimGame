@@ -225,6 +225,23 @@ win.mainloop()
 
 표적 개수 입력창에 3을 입력하고 버튼을 누릅니다. 버튼이 3개가 랜덤한 위치에 생성되고 마지막으로 클리어 타임이 기록됩니다.
 
+### pyinstaller을 사용해서 exe 파일로 만들기   
+   
+pyinstaller를 사용하기 위해서 다운로드 해줍니다.
+```python
+pip install pyinstaller
+```   
+
+만든 프로그램을 하나의 프로그램(.exe)와 옵션을 설정하지 않게 pyinstaller의 옵션을 구성해서 실행합니다.   
+```python
+pyinstaller --onefile --noconsole tk_aimgame.py
+```   
+   
+실행을 하면 생성되는 dist 파일안에 tk_aimgame.exe 응용프로그램이 생성됩니다.
+
+
+추후에 시간이 된다면 게임화면으로 되돌아가는 버튼을 구현할 예정입니다. 2022-02-02 최종수정
+마찬가지로 랜덤으로 생성되는 버튼의 위치가 화면을 벗어나는 것도 수정할 예정 2022-02-02 최종수정
 
 
 
