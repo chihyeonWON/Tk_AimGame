@@ -19,9 +19,16 @@ ent.grid(column=1, row=0, padx=20, pady=20)
 # 랜덤한 위치에 버튼을 생성하는 함수
 
 
+def other_btn():
+    btn.destroy()
+    ran_btn()
+
+
 def ran_btn():
+    global btn
     btn = Button(win)
     btn.config(bg="red")
+    btn.config(command=other_btn)
     btn.place(relx=random.random(), rely=random.random())
 
 # 버튼을 클릭했을 때 위젯을 모두 없애고 창크기를 키워주는 함수
